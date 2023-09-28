@@ -73,20 +73,13 @@ public class main {
     }
 
     public static long countSequences(int a, int b) {
-        if (a == 0) {
+        if (a > b + 1) {
+            return 0;
+        }
+        if (a == 0 || b == 0) {
             return 1;
         }
-
-        if (b == 0) {
-            return 1;
-        }
-
-        // Рекурсивно вычисляем количество последовательностей,
-        // уменьшая количество нулей или единиц на каждом шаге.
-        long sequencesWithoutZero = countSequences(a - 1, b);
-        long sequencesWithoutOne = countSequences(a, b - 1);
-
-        return sequencesWithoutZero + sequencesWithoutOne;
+        return countSequences(a, b - 1) + countSequences(a - 1, b - 1);
     }
 
     public static int countOnesInSequence() {
