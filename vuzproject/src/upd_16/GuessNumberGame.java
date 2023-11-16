@@ -19,6 +19,7 @@ public class GuessNumberGame extends JFrame {
         // Генерация случайного числа от 0 до 20
         secretNumber = (int) (Math.random() * 21);
 
+
         // Создание компонентов
         instructionLabel = new JLabel("Guess the number between 0 and 20:");
         guessField = new JTextField(5);
